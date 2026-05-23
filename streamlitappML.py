@@ -62,6 +62,6 @@ if selected == 'Penguin species Prediction':
         user_input = [island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass,
                      sex]
         input_dict = dict(zip(keys, user_input))
-        spec_classification = model.predict(pd.DataFrame(input_dict,index=[0])).tolist()
+        spec_classification = model.predict(pd.DataFrame(input_dict,index=[0])).tolist()[0]
     
-    st.success(str(spec_classification[0]))
+    st.success(spec_classification)
